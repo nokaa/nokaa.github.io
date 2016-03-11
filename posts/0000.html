@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>
+
+        <title>nokaa</title>
+        <meta name="description" content="nokaa's website and blog"/>
+
+        <style>
+@charset "UTF-8";a,body{color:#F87C7C}.l,a:hover{border-bottom:0}.c{text-align:center}body{margin:5% auto;padding:0 10px;max-width:650px;background:#4C4C4C;text-shadow:0 1px 0 #8D0000;font-family:georgia,serif;font-size:18px;line-height:1.6}code,pre{background:#373B41;font-size:85%;border-radius:3px}pre{word-wrap:normal;padding:9px}code{font-family:monospace;padding:.2em 0}code::after,code::before{letter-spacing:-.2em;content:" "}a{border-bottom:1px solid #F87C7C;text-decoration:none}h1,h2{line-height:1.3}footer{padding-top:5%;font-size:12px}
+        </style>
+    </head>
+    
+    <body>
+        <header role="banner" aria-label="main">
+            <h1 class="c"><a href="/posts">nokaa's blog</a></h1>
+        </header>
+
+        <main aria-label="Content">
+            <h3 class="c"><a href="">Rust Web Servers</a></h3>
+            <p>
+                I have been experimenting with using
+                <a href="https://www.rust-lang.org">Rust</a> for writing web servers.
+                I enjoy doing low level programming, so I have not explored much
+                of the work that has gone on in this area with Rust, such as
+                <a href="https://github.com/nickel-org/nickel.rs">Nickel</a> and
+                <a href="https://github.com/iron/iron">Iron</a>.
+                I have instead opted to use
+                <a href="https://github.com/tailhook/rotor-http">rotor-http</a>.
+                Using rotor-http poses some challenges, as it is <em>very</em>
+                barebones. As an example, when a form is submitted, we are given a byte
+                array, which required writing a parser to utilize this data.</br></br>
+                I have previously worked with <a href="https://golang.org">Go</a>;
+                mostly writing webservers. Working with Rust has been a completely
+                different experience. As an example, in Go if I wish to redirect a user,
+                I can do something like <code>http.Redirect(w, r, "/", 302)</code>.
+                In Rust I wrote this function:</br>
+                <pre><code>pub fn redirect(res: &mut Response, data: &[u8],
+                location: &[u8], code: u16)
+    -> Result<(), String> {
+    let message = match code_lookup(code) {
+        Some(m) => m,
+        None => return Err("Code not found!".to_string()),
+    };
+
+    res.status(code, message);
+    res.add_header("Location", location).unwrap();
+    res.add_length(data.len() as u64).unwrap();
+    if res.done_headers().unwrap() {
+        res.write_body(data);
+    }
+    res.done();
+}</code></pre>
+
+                At this point, I am able to simply call <code>redirect(res, b"Redirect", b"/", 302)</code>;
+                which is about as easy as what Go does. I've created <a href="https://github.com/nokaa/rotor-http-utils">a library</a> that contains a number of helpful functions for working with rotor-http, such as for parsing form data.</br></br>
+                In conclusion, Rust is definitely capable of use for web servers, although it may require
+                a lot of extra work. As Rust matures even further, and the community creates more libraries,
+                this situation will only improve.
+            </p>
+        </main>
+
+        <footer class="c" aria-label="License information">
+            <a class="l" rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nd/4.0/88x31.png" />
+            </a><br />
+            This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">nokaa</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.
+        </footer>
+    </body>
+</html>
