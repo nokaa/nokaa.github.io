@@ -4,7 +4,7 @@
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>
 
-        <title>nokaa</title>
+        <title>Rust Web Servers | nokaa</title>
         <meta name="description" content="nokaa's website and blog"/>
 
         <link rel="stylesheet" href="/resources/erato.min.css">
@@ -52,7 +52,10 @@
 }</code></pre>
 
                 At this point, I am able to simply call <code>redirect(res, b"Redirect", b"/", 302)</code>;
-                which is about as easy as what Go does. I've created <a href="https://github.com/nokaa/rotor-http-utils">a library</a> that contains a number of helpful functions for working with rotor-http, such as for parsing form data.</br></br>
+                which is about as easy as what Go does.
+                <a href="https://github.com/nokaa/rotor-http-utils">I've created a library</a>
+                that contains a number of helpful functions for working with rotor-http,
+                such as for parsing form data.</br></br>
                 In conclusion, Rust is definitely capable of use for web servers, although it may require
                 a lot of extra work. As Rust matures even further, and the community creates more libraries,
                 this situation will only improve.
