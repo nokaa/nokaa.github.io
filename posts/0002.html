@@ -23,6 +23,7 @@
                 thought that it may be interesting to write about it.
 
                 <h4 class="c">My Experience With Golang</h4>
+
                 I began working with Golang in July of 2015 (about 8 months ago). At the time,
                 I was attending a Hackathon and had no idea what to work on. I had heard quite
                 a lot about Golang on Hacker News and it sounded like a nice language.<br><br>
@@ -39,10 +40,66 @@
                 hackathon; and grew to love it. By the time I was home, I had completely
                 forgotten about NodeJS and C; Golang was my new love.<br><br>
 
-                Over the next several months I worked on a number of small projects using Golang.
-                I wrote a simple blog software and a simple pastebin clone; both of which I
-                continue to use on a different website. I also wrote a small program to send SMS
-                messages to attendees of a hackathon I helped organize.
+                Over the next several months I worked on a number of small projects using Golang;
+                such as a blog and a pastebin clone. That is to say, I have experience with using
+                Golang for nontrivial projects that I use everyday; but I do not have experience
+                using Golang with other developers. Also, none of my projects are larger than 1000-2000
+                lines of code.
+
+                <h4 class="c">What I Like About Golang</h4>
+
+                I really like how <em>fun</em> it is to write software with Golang. Every time I work
+                with it, I find myself enjoying what I'm writing. That's something that only a handful
+                of languages really have. I get the same feeling from working with Rust, Scheme, and
+                <a href="https://coq.inria.fr">Coq</a>.<br><br>
+
+                I love <a href="https://github.com/boltdb/bolt">Bolt</a>. Bolt is an embedded key/value
+                database in pure Golang. What this means is that you don't have to deal with setting up a
+                database, and you don't have to write any funny queries. Bolt creates a file on your disk,
+                and you do your database operations in pure Golang. This is very convenient for small
+                projects because it makes setup far easier; just <code>go get; go build</code>! It is also
+                nice that it works anywhere Go works, I use ARM based servers so I never know if software
+                will work. I really wish that Rust had something similar to Bolt.<br><br>
+
+                I think that one of Golang's best features is how strong its networking support is. Writing
+                servers is extremely easy using only the standard library. It is also very fast and low on
+                memory, which is a rare thing for servers that are often written in languages such as Python,
+                Ruby, and Java. The complete lack of support in Rust is a little disheartening, but not
+                unexpected. It seems like the community is doing a good job of filling this gap anyways.
+
+                <h4 class="c">What I Dislike About Golang</h4>
+
+                Oh yes, the part that everyone has been waiting for: it's hate on Golang time! First on the
+                list: everyone always complains about Golang. I used to pay attention to what people were
+                saying about Golang; but after a few months I stopped. Everything about Golang was
+                <em>it's bad</em> or <em>it won't be big</em>; it becomes tiring rather fast.<br><br>
+                
+                Golang is not the perfect language, no language can fill that role. However, Golang is very
+                well suited for a number of tasks. The idea of worrying about how popular Golang is seems
+                rather absurd. For one thing, it's backed by Google. It's hard to get a bigger vote of
+                confidence than that. Even ignoring that, if no one uses Golang, it can never become popular,
+                which just gives us an endless loop.<br><br>
+
+                Unlike most people, I do not dislike how Golang does error handling. I prefer how Rust
+                and Haskell do this, but it is nice not working with try-catch or worrying about a panic.
+                Lack of generics is annoying but I have fortunately not had to deal with this.<br><br>
+
+                Ultimately, my only major complaint about Golang deals with verbosity. Golang reminds me
+                of Java in how verbose it is. It often takes a lot of code to do something that feels
+                trivial. In the end, this isn't much of a complaint. Despite this issue Golang continues
+                to be fun to work with, which for me is in stark contrast to my experience with Java.
+
+                <h4 class="c">Why Did I Stop Working With Golang?</h4>
+
+                The only real answer is that I haven't. I think that Golang is very well suited to writing
+                servers, and I plan to continue to use it for this purpose. I've worked with Golang much less lately
+                because my interests have changed. Lately I have been much more interested in creating
+                tools and writing low-level code; and I feel that Rust is often better suited for this purpose.
+
+                <h4 class="c">Conclusion</h4>
+
+                In the end, this ended up being a post about what I wish Rust would learn from Golang, but that
+                isn't such a bad thing is it?
             </p>
         </main>
 
