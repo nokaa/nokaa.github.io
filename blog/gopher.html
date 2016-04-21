@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="UTF-8"/>
+        <meta name="viewport" content="width=device-width, height=device-height, user-scalable=no, initial-scale=1.0"/>
+
+        <title>Geomys | nokaa</title>
+        <meta name="description" content="nokaa's website and blog"/>
+
+        <link rel="stylesheet" href="https://nokaa.moe/resources/erato.min.css">
+    </head>
+    
+    <body>
+        <header role="banner" aria-label="main">
+            <h1 class="c"><a href="/blog">nokaa's blog</a></h1>
+        </header>
+
+        <main aria-label="Content">
+            <h3 class="c"><a href="">Geomys</a></h3>
+            <p>
+                I recently wrote a <a href="https://en.wikipedia.org/wiki/Gopher_protocol">
+                    gopher</a> server in Rust using
+                    <a href="https://github.com/tailhook/rotor">rotor</a>.
+                Gopher is an interesting net protocol of old that can be
+                    considered a predecessor to HTTP. It has been largely
+                    abandoned, however a number of enthusiasts still run
+                    servers, such as <a href="http://blog.z3bra.org/2015/02/do-you-gopher.html">
+                    z3bra</a> and <a href="https://arcetera.moe/blog/2016/03/02/gopher-in-2016/">ix</a>.<br><br>
+                
+                After reading about the protocol and looking at what other
+                    people were doing, I decided to set up my own server. I
+                    thought that writing a gopher server would be a good
+                    project to learn more about TCP and rotor without
+                    spending too much time. I also learned how to follow
+                    a <a href="https://tools.ietf.org/html/rfc1436">
+                    specification</a> from this project.
+
+                I decided to build it on top of rotor because, other than
+                mio, it is the only library I know of in Rust for working
+                with TCP. Rotor also has the advantage of async, which is
+                always welcome.
+            </p>
+        </main>
+
+        <footer class="c" aria-label="License information">
+            <a class="l" rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">
+                <img alt="Creative Commons License" style="border-width:0" src="https://licensebuttons.net/l/by-nd/4.0/88x31.png" />
+            </a><br />
+            This work by <span xmlns:cc="http://creativecommons.org/ns#" property="cc:attributionName">nokaa</span> is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-nd/4.0/">Creative Commons Attribution-NoDerivatives 4.0 International License</a>.
+        </footer>
+    </body>
+</html>
