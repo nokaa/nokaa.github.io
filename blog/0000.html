@@ -28,12 +28,16 @@
                 <a href="https://github.com/tailhook/rotor-http">rotor-http</a>.
                 Using rotor-http poses some challenges, as it is <em>very</em>
                 barebones. As an example, when a form is submitted, we are given a byte
-                array, which required writing a parser to utilize this data.</br></br>
-                I have previously worked with <a href="https://golang.org">Go</a>;
+                array, which required writing a parser to utilize this data.
+                </br></br>
+
+                I have previously worked with <a href="https://golang.org">Golang</a>;
                 mostly writing webservers. Working with Rust has been a completely
                 different experience. As an example, in Go if I wish to redirect a user,
                 I can do something like <code>http.Redirect(w, r, "/", 302)</code>.
-                In Rust I wrote this function:</br>
+                In Rust I wrote this function:
+                </br>
+
                 <pre><code>pub fn redirect(res: &mut Response, data: &[u8],
                 location: &[u8], code: u16)
     -> Result<(), String> {
@@ -55,7 +59,9 @@
                 which is about as easy as what Go does.
                 <a href="https://github.com/nokaa/rotor-http-utils">I've created a library</a>
                 that contains a number of helpful functions for working with rotor-http,
-                such as for parsing form data.</br></br>
+                such as for parsing form data.
+                </br></br>
+
                 In conclusion, Rust is definitely capable of use for web servers, although it may require
                 a lot of extra work. As Rust matures even further, and the community creates more libraries,
                 this situation will only improve.
